@@ -1,0 +1,57 @@
+[System]
+Name='LAB3_2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=15
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Temp'
+Range=[0 40]
+NumMFs=5
+MF1='Duzhe_holodna':'trimf',[0 4.08114558472554 40]
+MF2='Holodna':'trimf',[0 11.0978520286396 40]
+MF3='Norma':'trimf',[0 20 40]
+MF4='Tepla':'trimf',[0 27.4224343675418 40]
+MF5='Duzhe_tepla':'trimf',[0 35.727923627685 40]
+
+[Input2]
+Name='Shvydkist'
+Range=[-5 5]
+NumMFs=3
+MF1='Vidjemna':'trimf',[-5 -4.27976190476191 5]
+MF2='Nul':'trimf',[-5 0 5]
+MF3='Dodatnya':'trimf',[-5 4.20833333333333 5]
+
+[Output1]
+Name='Regulyator'
+Range=[-100 100]
+NumMFs=5
+MF1='Velykyy_Livo':'trimf',[-100 -85.9880239520958 100]
+MF2='Nevelykyy_Livo':'trimf',[-100 -38.562874251497 100]
+MF3='Vymkneno':'trimf',[-100 0 100]
+MF4='Nevelykyy_Pravo':'trimf',[-99.7604790419162 40.7185628742515 100.239520958084]
+MF5='Velykyy_Pravo':'trimf',[-100 85.9880239520958 100]
+
+[Rules]
+5 3, 1 (1) : 1
+5 1, 2 (1) : 1
+4 3, 1 (1) : 1
+4 1, 3 (1) : 1
+1 1, 5 (1) : 1
+1 3, 4 (1) : 1
+2 1, 1 (1) : 1
+2 3, 3 (1) : 1
+5 2, 1 (1) : 1
+4 2, 2 (1) : 1
+1 2, 5 (1) : 1
+2 2, 4 (1) : 1
+3 3, 2 (1) : 1
+3 1, 4 (1) : 1
+3 2, 3 (1) : 1
